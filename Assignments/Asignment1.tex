@@ -1,4 +1,4 @@
-\documentclass[12tpt]{article}
+\documentclass[12pt]{article}
 
 \usepackage[letterpaper,left=1in,right=1in,top=1in,bottom=1in]{geometry}
 
@@ -79,15 +79,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\item \textbf{Tennekes and Lumley Problem 1.4} An airplane with a hot-wire anemometer mounted on its wing tip is to fly through the turbulent boundary layer of the atmosphere at a speed of $\SI{50}{\meter\per\second}$. The velocity fluctuations in the atmosphere are of order $\SI{0.5}{\meter\per\second}$,the length scale of the large eddies is about $\SI{100}{\meter}$. The hot-wire anemometer is to be designed so that it will register the motion of the smallest eddies. What is the highest frequency the anemometer will encounter? What should the length of the hot-wire sensor be? If the noise in the electronic circuitry is
-expressed in terms of equivalent turbulence intensity, what is the permissible noise level?
+\item  \small{\textbf{Tennekes and Lumley Problem 1.4} An airplane with a hot-wire anemometer mounted on its wing tip is to fly through the turbulent boundary layer of the atmosphere at a speed of $\SI{50}{\meter\per\second}$. The velocity fluctuations in the atmosphere are of order $\SI{0.5}{\meter\per\second}$,the length scale of the large eddies is about $\SI{100}{\meter}$. The hot-wire anemometer is to be designed so that it will register the motion of the smallest eddies. What is the highest frequency the anemometer will encounter? What should the length of the hot-wire sensor be? If the noise in the electronic circuitry is expressed in terms of equivalent turbulence intensity, what is the permissible noise level?}
 
 \begin{Solution}
 Let $U(t) = \bar{u} + u'$ where $\bar{u}$ is the time average of $U(t)$ and $u'$ is the fluctuating portion of $U(t)$. 
-
-\begin{equation}
-    \bar{u} = \SI{50}{\meter\per\second} \qquad u'= \SI{0.5}{\meter\per\second}
-\end{equation}
 With the length scale of the largest eddies being $\SI{100}{\meter}$, the large scale Reynolds number will be, ($\nu = \SI{1.5E-5}{\meter\squared\per\second}$)
 
 \begin{equation}
@@ -96,18 +91,14 @@ With the length scale of the largest eddies being $\SI{100}{\meter}$, the large 
 
 The highest frequency will be from the the highest speed and the smallest length scales, 
 \begin{equation}
-    \omega \sim \frac{\bar{u}}{\eta} \sim \bar{u}\left[\frac{\nu^3\ell}{\bar{u}^3}\right]^{-1/4}
+    \omega \sim \frac{\bar{u}}{\eta} \sim \bar{u}\left[\frac{\nu^3\ell}{\bar{u}^3}\right]^{-1/4}, \qquad   \boxed{\omega = \SI{40.5}{\kilo\hertz}}
 \end{equation}
-\begin{equation}
-    \boxed{\omega = \SI{40.5}{\kilo\hertz}}
-\end{equation}
-
 
 For the hot wire anemometer to capture the smallest scale effects the length must be on the same order as $\eta$, where 
 \begin{equation}
     \eta \sim  \left[\frac{\nu^3\ell}{\bar{u}^3}\right]^{\frac{1}{4}} \sim \boxed{\SI{1.28E-3}{\meter}}
 \end{equation}
-To find the permissible noise level, let
+To find the signal permissible noise level, let
 \begin{equation}
     E(k) = a k^{-5/3}
 \end{equation}
@@ -115,16 +106,24 @@ We can integrate this over the given spectrum for this problem, to get $\frac{1}
 \begin{equation}
     \frac{1}{2}u' u' = \int_\frac{1}{100} ^\frac{1}{1.28E-3} a k^{-5/3} dk = -a\frac{3}{2}\left[780^{-2/3} -  0.01^{-2/3}\right]
 \end{equation}
-So, with $u'=\SI{0.5}{\meter\per\second}$, we get $a = 0.0038$. The turbulent intensity 
+So, with $u'=\SI{0.5}{\meter\per\second}$, we get $a = 0.0038$. Now, the noise can exist below this region, so $\frac{1}{2}u_{noise}' u_{noise}'$ is 
+
+\begin{equation}
+    \frac{1}{2}u_{noise}' u_{noise}' = \int_0 ^\frac{1}{100} 0.0038 k^{-5/3} dk = 0.0057\left[ 0.01^{-2/3} - 0\right] = 0.1228
+\end{equation}
+\begin{equation}
+    \boxed{u_{noise} = \SI{0.5}{\meter\per\second}} \qquad \boxed{\frac{u_{noise}}{\bar{u}}  = 0.00991}
+\end{equation}
+
 \end{Solution}
 \newpage
-
+% \newgeometry{left=1.5in,right=1in}
 \item Based on the readings, viewings, and your awareness so far, submit a $\sim2$ page summary expressing your thoughts on how the specific subject of “turbulence” might differ from what you have learned about fluid dynamics in general so far.
 
 \begin{Solution}
 \par{I believe one of the main ways in which turbulence diverges from more rudimentary fluid dynamics is ability to describe the physics. For instance, one commonly taught topic in undergraduate fluid dynamic classes is laminar shear driven flow of a Newtonian fluid. The trend for $\mu$ is simple; the mathematical model is not too complex. When our observations of the physical world and well developed mathematical constructs seem to neatly align---as with the stated example---we are better able to develop a strong understanding of the phenomena in question. With turbulence, we find ourselves attempting to piece together an understanding of a phenomena with a immense complexity with math tools that can't (yet?) give us solutions. }
-\vspace{2mm}
-\par{Another difference between the two is the range of scales---be it time scales, length scales, etc.--- that are taken into consideration. Both subjects may study turbulent pipe flow however while the one will see the flat velocity profile as justification for using an average flow velocity, the other looks more into the underlying causes for that flattened profile. }
+\vspace{1mm}
+\par{Another difference between the two is the range of scales---be it time scales, length scales, etc.---that are taken into consideration. Both subjects may study turbulent pipe flow however while the one will see the flat velocity profile as justification for using an average flow velocity, the other looks more into the underlying causes for that flattened profile. }
 
 \end{Solution}
 % \newpage 
